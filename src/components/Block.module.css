@@ -1,0 +1,36 @@
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 0.5fr;
+    width: 100%;
+    background-color: #13306F;
+    padding: 12px 9px;
+}
+
+.container p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.link{
+    color: #eee;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #0e1a33;
+    text-decoration: none;
+    padding: 12px 0;
+    transition: all 0.4s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border-radius: 8px;
+}
+
+.link:hover{
+    background-color: #0071FF;
+    color: #fff;
+    font-weight: 600;
+    
+}

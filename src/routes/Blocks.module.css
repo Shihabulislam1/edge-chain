@@ -1,0 +1,24 @@
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: aliceblue;
+    padding-top: 24px;
+    padding-left: 18px;
+}
+.headers{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 0.5fr;
+    width: 100%;
+}
+.datas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap:9px
+}

@@ -1,0 +1,31 @@
+
+.container{
+    display: flex;
+    gap: 12px;
+    justify-content: start;
+    align-items: center;
+    background-color: #13306f;
+    padding: 0 36px;
+    /* width: px; */
+    height: 138px;
+    border-radius: 12px;
+}
+
+/* leanear gradient background */
+.value{
+    font-size: 18px;
+    font-weight: 500;
+    background: linear-gradient(90deg, #fff 0%, #ccc 100%);
+    color: #222;
+    width: 96px;
+    height: 64px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    font-size: 16px;
+    font-weight: 400;
+    color: #ddd;
+}

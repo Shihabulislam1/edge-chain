@@ -1,0 +1,86 @@
+
+.sidebar{
+    background-color: #08132C;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    /* justify-content: space-between; */
+    align-items: center;
+    height: 100vh;
+    width: 20%;
+}
+.navLinks{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:1px;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+   
+}
+.link{
+    text-decoration: none;
+    color: #eee;
+    font-size: 22px;
+    font-weight: 400;
+    padding: 24px 0;
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    /* justify-content: center; */
+    padding-left: 30%;
+    align-items: center;
+    gap: 12px;
+}
+.link:hover{
+    background-color: #0071FF;
+    color: #fff;
+    font-weight: 600;
+}
+.homeLink{
+    width: 100%;
+    padding-left: 30%!important;
+}
+.logo{
+    /* width: 100%; */
+    height: 96px;
+    padding-top: 24px;
+ 
+   
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.logoMini{
+    height: 20px;
+}
+
+.navLinks a:global(.active) {
+    /* Your active link styles */
+    background-color: #0071FF; 
+    font-weight: 600; 
+    
+  }
+.ruet {
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+    font-weight: 500;
+    color: #eee;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoRuet{
+    width: 70%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

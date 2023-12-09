@@ -1,0 +1,16 @@
+
+.container{
+    background-color: #0F2046;
+    padding: 36px 16px 36px 24px;
+}
+.containerChild{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.header{
+    font-size: 24px;
+    color: #eee;
+    font-weight: 400;
+}
