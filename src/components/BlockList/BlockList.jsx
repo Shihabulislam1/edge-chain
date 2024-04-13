@@ -1,9 +1,10 @@
-import styles from "./Blocks.module.css";
-import Block from "../components/Block";
 import { useEffect, useState } from "react";
+import Block from "../Block/Block";
+import styles from "./BlockList.module.css";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-function Blocks({ api = "http://127.0.0.1:3000", setCurrentHash }) {
+const BlockList = ({ api = "http://127.0.0.1:3000", setCurrentHash }) => {
   const [blocks, setBlocks] = useState([]);
 
   useEffect(() => {
@@ -34,20 +35,24 @@ function Blocks({ api = "http://127.0.0.1:3000", setCurrentHash }) {
         <p className={styles.blockText}>Block</p>
         <p className={styles.time}>Time</p>
         <p className={styles.hash}>Hash</p>
-        <p className={styles.white}>&nbsp;</p>
+        <p className={styles.white}>
+          <Link to="/dashboard/blocks" className={styles.link22}>
+            View All
+          </Link>
+        </p>
       </div>
       <div className={styles.datas}>
-        {blocks.map((block, index) => (
+        {blocks.slice(0, 10).map((block, index) => (
           <Block key={index} block={block} setCurrentHash={setCurrentHash} />
         ))}
       </div>
     </div>
   );
-}
+};
 
-export default Blocks;
+export default BlockList;
 
-Blocks.propTypes = {
+BlockList.propTypes = {
   api: PropTypes.string,
   setCurrentHash: PropTypes.func,
 };

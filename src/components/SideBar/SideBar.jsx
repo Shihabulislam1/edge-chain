@@ -1,10 +1,10 @@
 import styles from "./SideBar.module.css";
 import { Link, NavLink } from "react-router-dom";
-import Logo from "../assets/mainLogo/logo-detail.png";
-import logoDashboard from "../assets/DashBoard/DashboardLogo.png";
-import logoBlocks from "../assets/Blocks/Blocks.png";
-import logoEdges from "../assets/Edges/EdgeNode.png";
-import logoDocs from "../assets/Docs/DOCS.png";
+import Logo from "../../assets/mainLogo/logo-detail.png";
+import logoDashboard from "../../assets/DashBoard/DashboardLogo.png";
+import logoBlocks from "../../assets/Blocks/Blocks.png";
+import logoEdges from "../../assets/Edges/EdgeNode.png";
+import logoDocs from "../../assets/Docs/DOCS.png";
 // import Ruet from "../assets/ruet.jpeg";
 function SideBar() {
   return (
