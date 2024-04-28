@@ -9,14 +9,14 @@ import Docs from "./routes/Docs/Docs";
 import Edges from "./routes/Edges/Edges";
 import BlockDetails from "./routes/BlockDetails/BlockDetails";
 import SideBar from "./components/SideBar/SideBar";
-import DashboardDetails from "./components/DashboardDetails/DashboardDetails";
+import DashboardDetails from "./components/DashBoardDetails/DashboardDetails";
 import Cloud from "./routes/Cloud/Cloud";
-import Landing from "./routes/Landing/Landing";
+
 
 const api = "https://iot-server-file.onrender.com";
 
 function App() {
-  const [currentHash, setCurrentHash] = useState("");
+  const [currentHash, setCurrentHash] = useState(" ");
   return (
     <>
       <BrowserRouter>

@@ -8,8 +8,10 @@ function DashboardDetails({ setCurrentHash, api }) {
   return (
     <div className={styles.container}>
       <div className={styles.first}>
+
         <NetworkPer api={api} />
         <LineChart api={api} />
+        
       </div>
       <BlockList setCurrentHash={setCurrentHash} api={api} />
     </div>
