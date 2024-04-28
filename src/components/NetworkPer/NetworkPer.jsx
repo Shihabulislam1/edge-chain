@@ -25,7 +25,7 @@ function NetworkPer({ api = "http://127.0.0.1:3000" }) {
           endpoint={`${api}/power-consumption`}
           title={"Power Consumption"}
           responseKey={"totalPower"}
-          unit="kW"
+          unit="W"
         />
       </div>
     </div>

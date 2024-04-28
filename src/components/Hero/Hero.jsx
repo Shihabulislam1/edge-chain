@@ -1,6 +1,6 @@
 function Hero() {
   return (
-    <section className="pt-12 mx-auto max-w-screen-xl pb-12 px-4 items-center lg:flex md:px-8 bg-[#03112d]">
+    <section className="pt-2 w-full min-h-screen pb-12 px-4 items-center lg:flex md:px-8 bg-[#03112d]">
       <div className="space-y-4 flex-1 sm:text-center lg:text-left">
         <h1 className="text-white font-bold text-4xl xl:text-5xl">
         Revolutionizing Data Security:

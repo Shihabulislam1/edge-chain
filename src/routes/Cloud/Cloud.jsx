@@ -4,7 +4,8 @@ import Modal from "./Modal/Modal";
 import Display from "./Display/Display";
 import FileUpload from "./FileUpload/FileUpload";
 import Upload from "./artifacts/contracts/Upload.sol/Upload.json";
-import styles from './Cloud.module.css'
+import styles from './Cloud.module.css';
+import Header from '../../components/Header/Header';
 
 function Cloud() {
   const [account, setAccount] = useState("");
@@ -16,7 +17,6 @@ function Cloud() {
     const wallet = async () => {
       if (provider) {
         //await provider.send("eth_requestAccount",[]);
-
         window.ethereum.on("accountsChanged", () => {
           window.location.reload;
         });
@@ -40,7 +40,8 @@ function Cloud() {
 
     provider && wallet();
   }, []);
-  return (
+  return (<>
+  <Header/>
     <section >
     <div className={styles.bg}></div>
     <div className={styles.bg2}></div>
@@ -67,7 +68,7 @@ function Cloud() {
         <Display account={account} contract={contract}></Display></div>
       </div>
       
-    </section>
+    </section></>
   );
 }
 
