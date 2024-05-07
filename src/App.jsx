@@ -14,7 +14,7 @@ import Cloud from "./routes/Cloud/Cloud";
 
 
 // const api = "https://iot-server-file.onrender.com";
-const api = "http://localhost:3000";
+const api = "https://iot-server-file.onrender.com";
 
 function App() {
   const [currentHash, setCurrentHash] = useState(" ");
