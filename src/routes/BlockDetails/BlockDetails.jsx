@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 function BlockDetails({ currentHash, api = "http://127.0.1.1:3000" }) {
-  const [blockData, setBlockData] = useState(null);
+  const [blockData, setBlockData] = useState({});
 
   useEffect(() => {
     const fetchBlockDetails = async () => {
@@ -13,21 +13,24 @@ function BlockDetails({ currentHash, api = "http://127.0.1.1:3000" }) {
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
-        const data = await response.json();
+        const  data  = await response.json();
+        // console.log("data", data.block);
         setBlockData(data.block);
+
+        console.log("Blockdata",blockData.data.tempData);
       } catch (error) {
         console.error("Error fetching block details:", error);
       }
     };
 
     fetchBlockDetails();
-  }, [currentHash,api]);
+  }, [currentHash, api, blockData]);
 
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Block Details</h2>
       <div className={styles.details}>
-      <div className={styles.rows2}>
+        <div className={styles.rows2}>
           <div className={styles.label2}>Overview</div>
           {/* <div className={styles.value}>{blockData?.hash}</div> */}
         </div>
@@ -68,8 +71,18 @@ function BlockDetails({ currentHash, api = "http://127.0.1.1:3000" }) {
         <div className={styles.rows}>
           <div className={styles.label}>Data</div>
           <div className={`${styles.value} ${styles.datas}`}>
-             <p className={styles.data}>Temperature : {blockData?.data.data.temperature}</p>
-              <p className={styles.data}>Humidity : {blockData?.data.data.humidity}</p>
+            <p className={styles.data}>
+              Temperature : {blockData?.data?.tempData?.temperature.toFixed(2)}
+            </p>
+            <p className={styles.data}>
+              Humidity : {blockData?.data?.tempData?.humidity.toFixed(2)}
+            </p>
+            <p className={styles.data}>
+              Vibration : {blockData?.data?.tempData?.vibration}
+            </p>
+            <p className={styles.data}>
+              Vibration Value : {blockData?.data?.tempData?.vibrationValue.toFixed(2)}
+            </p>
           </div>
         </div>
       </div>

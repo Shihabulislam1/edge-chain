@@ -13,7 +13,8 @@ import DashboardDetails from "./components/DashBoardDetails/DashboardDetails";
 import Cloud from "./routes/Cloud/Cloud";
 
 
-const api = "https://iot-server-file.onrender.com";
+// const api = "https://iot-server-file.onrender.com";
+const api = "http://localhost:3000";
 
 function App() {
   const [currentHash, setCurrentHash] = useState(" ");

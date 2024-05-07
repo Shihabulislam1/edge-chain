@@ -1,5 +1,7 @@
 import styles from "./NetworkPer.module.css";
 import NetComponents from "../NetComponents/NetComponents";
+import propTypes from "prop-types";
+
 function NetworkPer({ api = "http://127.0.0.1:3000" }) {
   return (
     <div className={styles.container}>
@@ -33,3 +35,7 @@ function NetworkPer({ api = "http://127.0.0.1:3000" }) {
 }
 
 export default NetworkPer;
+
+NetworkPer.propTypes = {
+  api: propTypes.string,
+};
