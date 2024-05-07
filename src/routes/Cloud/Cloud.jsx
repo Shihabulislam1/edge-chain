@@ -1,17 +1,16 @@
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
-import Modal from "./Modal/Modal";
 import Display from "./Display/Display";
 import FileUpload from "./FileUpload/FileUpload";
 import Upload from "./artifacts/contracts/Upload.sol/Upload.json";
-import styles from './Cloud.module.css';
-import Header from '../../components/Header/Header';
+import Header from "../../components/Header/Header";
+import propTypes from "prop-types";
 
-function Cloud() {
+function Cloud({ api = "http://localhost:3000" }) {
   const [account, setAccount] = useState("");
   const [contract, setContract] = useState([]);
   const [provider, setProvider] = useState(null);
-  const [modalOpen, setModalOpen] = useState(false);
+
   useEffect(() => {
     const provider = new ethers.BrowserProvider(window.ethereum);
     const wallet = async () => {
@@ -40,36 +39,43 @@ function Cloud() {
 
     provider && wallet();
   }, []);
-  return (<>
-  <Header/>
-    <section >
-    <div className={styles.bg}></div>
-    <div className={styles.bg2}></div>
-    <div className={styles.bg3}></div>
-      {!modalOpen && (
-        <button className={styles.share} onClick={() => setModalOpen(true)}>
-          Share
-        </button>
-      )}
-      {modalOpen && (
-        <Modal setModalOpen={setModalOpen} contract={contract}></Modal>
-      )}
-      <div className="">
-        <h1 style={{ color: "white" }}>IoT EDGE CLOUD 3.0</h1>
-        
+  return (
+    <div className="p-0 bg-blue-950">
+      <Header />
+      <section className="pt-12">
+        <div className="min-h-screen">
+          <div className="flex flex-col justify-center items-center">
+            <h1 className="text-gray-200 text-2xl font-semibold text-center mb-8">
+              IoT EDGE CLOUD
+            </h1>
 
-        <p style={{ color: "white" }}>Account : {account}</p>
-        <div className="">
-        <FileUpload
-          account={account}
-          contract={contract}
-          provider={provider}
-        ></FileUpload>
-        <Display account={account} contract={contract}></Display></div>
-      </div>
-      
-    </section></>
+            <p className="text-gray-300 text-xl  text-center mb-12">
+              <span className="">Account: </span>
+              <span className="text-gray-100 font-extralight italic">
+                {account}
+              </span>
+            </p>
+
+            <div className="min-w-[1250px] max-w-[1450px]">
+              <FileUpload
+                account={account}
+                contract={contract}
+                provider={provider}
+                api={api}
+              />
+            </div>
+            <div className="">
+              <Display account={account} contract={contract}></Display>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
 
 export default Cloud;
+
+Cloud.propTypes = {
+  api: propTypes.string,
+};

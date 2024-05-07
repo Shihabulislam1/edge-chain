@@ -25,7 +25,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route path="" element={<HomePage />} />
           </Route>
-          <Route path="cloud" element={<Cloud />} />
+          <Route path="cloud" element={<Cloud api={api} />} />
 
           <Route path="dashboard" element={<Dashboard />}>
             <Route
